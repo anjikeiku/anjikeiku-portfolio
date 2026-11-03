@@ -23,8 +23,10 @@ body {
 }
 
 .yt_video-demo_reel {
-    width: 100%;
+    width: 80%;
+    aspect-ratio: 16 / 9;
     height: auto;
+    border: none;
 }
 
 .search-box {
@@ -172,7 +174,7 @@ button {
 
 .button-outline {
     background-color: white;
-    border-width: 3px;
+    border-width: 2px;
     border-color: var(--pink);
     border-style: solid;
 
