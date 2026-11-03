@@ -65,9 +65,10 @@ header {
     width: 100%;
     z-index: 1000;
 
-    background: rgba(255, 255, 255, .5);
+    background: transparent;
     
     font-family: 'Quicksand';
+    font-weight: bold;
     color: var(--pink); 
 }
 
