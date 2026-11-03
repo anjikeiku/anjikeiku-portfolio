@@ -15,6 +15,34 @@ body {
     text-align: center;
 }
 
+.search-box {
+    max-width: 100%;
+    background: transparent;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+input {
+    flex: 1;
+    height: auto;
+    max-width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+
+    font-family: "Borel";
+    font-size: 5rem;
+    color: var(--pink);
+
+    text-align: center;
+}
+
 header {
     font-family: 'Quicksand';
     color: var(--pink); 
@@ -91,20 +119,8 @@ p {
     color:var(--pink);
 }
 
-input::placeholder {
-    font-family: 'Quicksand';
-    font-size: 200rem;
-}
-
-.searchbar {
-    max-width: max-content;
-    max-height: min-content;
-    margin: auto;
-}
-
 button {
-    border-radius: 25%;
-    padding: 10pt;
+    border-radius: 10px;
     max-width: 20%;
 
     font-family: 'Quicksand';
@@ -116,13 +132,13 @@ button {
 }
 
 .button-pink {
+    border-style: none;
     background-color: var(--pink);
     color: white;
 }
 
 .button-outline {
     background-color: white;
-    border-radius: 10px;
     border-width: 3%;
     border-color: var(--pink);
     border-style: solid;
