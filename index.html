@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+    </head>
+   
+    <body>      
+        <div id="header"></div>           
+        
+        <h1>Beeeee not afraid!</h1>
+
+        <!--SEARCH BAR-->
+        <div class="searchbar"> 
+            <input type="text"
+            placeholder="Search..">
+        </div>
+
+        <p>I'm Anji! A <span class="bold">Multimedia Artist</span>, brand builder, problem solver, and bonafide Angel!<br>
+        Check out my most recent projects!</p>
+
+        <iframe
+            width="420"
+            height="315"
+            src="https://youtu.be/b_jfp6dj1tg?si=yhn9o0_Wj5z7ApMr">
+        </iframe>  
+        
+        <div id="footer"></div>
+
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+    </body>
+</html>
