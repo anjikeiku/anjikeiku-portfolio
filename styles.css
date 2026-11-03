@@ -15,8 +15,15 @@ body {
     text-align: center;
 }
 
+.wrapper {
+    max-width: 90%;
+    max-height: auto;
+    padding: 50px;
+    margin: 0 auto;
+}
+
 .yt_video-demo_reel {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
@@ -112,10 +119,12 @@ footer {
 
 /*HEADERS AND TEXT*/
 h1 {
-    color: var(--pink);
     font-family: 'Borel';
     font-size: 3rem;
+    font-weight: lighter;
     line-height: 0%;
+
+    color: var(--pink);
 }
 
 h2 {
@@ -131,6 +140,10 @@ p {
 
 .bold {
     font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .pink {
@@ -159,7 +172,7 @@ button {
 
 .button-outline {
     background-color: white;
-    border-width: 3%;
+    border-width: 3px;
     border-color: var(--pink);
     border-style: solid;
 
@@ -191,7 +204,11 @@ ul li a:hover:not(.active) {
     color: var(--pink)
 }
 
-ul li::before {
+.list-heart {
+    color: var(--pink);
+}
+
+.list-heart li::before {
     content: "";
     display: inline-block;
 
@@ -202,14 +219,10 @@ ul li::before {
     background-size: contain;
     background-repeat: no-repeat;
 
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
-.list-heart {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-
-    font-family: 'Quicksand';
-    color: var(--pink)
+.list-heart li{
+    float: none;
+    text-align: left;
 }

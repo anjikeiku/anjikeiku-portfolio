@@ -10,20 +10,17 @@
         <!--HEADER-->
         <div id="header"></div>           
         
-        <h1>Beeeee not afraid!</h1>     
-
-        <p>I'm Anji! A <span class="bold pink">Multimedia Artist</span>, brand builder, problem solver, and bonafide Angel!<br>
-        Check out my most recent projects!</p>
-
         <!--CHANGE SOURCE FOR NEW VIDEO-->
         <div>
             <iframe class="yt_video-demo_reel"
-            style="aspect-ratio: 16/9;"
                 src="https://www.youtube-nocookie.com/embed/b_jfp6dj1tg?si=-bS5p7eGb9qzXg2C" 
                 title="YouTube video player"
+                style="aspect-ratio: 16/9;"
                 frameborder="0"
                 allow="accelerometer;
-                autoplay;
+                mute= 1;
+                autoplay= 1;
+                controls= 0;
                 clipboard-write;
                 encrypted-media;
                 gyroscope;
@@ -33,20 +30,27 @@
             </iframe>
         </div>
 
-        <!--SEARCH BAR-->
-        <div class="search-box">
-            <div>
-                <p>Looking for a specific project?</p>
+        <div class="wrapper">
+            <h1>Beeeee not afraid!</h1>     
+
+            <p>I'm Anji! A <span class="bold pink">Multimedia Artist</span>, brand builder, problem solver, and bonafide Angel!<br>
+            Check out my most recent projects!</p>
+
+            <!--SEARCH BAR-->
+            <div class="search-box">
+                <div>
+                    <p>Looking for a specific project?</p>
+                </div>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Type here..." autocomplete=off>
+                </div>
             </div>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Type here..." autocomplete=off>
-            </div>
+            
+            <button class="button-pink">
+                <p>View the Collection!</p>
+            </button>
         </div>
         
-        <button class="button-pink">
-            <p>View the Collection!</p>
-        </button>
-
         <!--FOOTER-->
         <div id="footer"></div>
 
