@@ -23,7 +23,7 @@ body {
 }
 
 .yt_video-demo_reel {
-    width: 80%;
+    width: 100%;
     aspect-ratio: 16 / 9;
     height: auto;
     border: none;
@@ -59,6 +59,7 @@ input {
 
 /*HEADER*/
 header {
+    position: sticky;
     font-family: 'Quicksand';
     color: var(--pink); 
 }
