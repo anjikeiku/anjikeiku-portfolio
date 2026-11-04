@@ -2,6 +2,7 @@
 
 :root {
     --pink: #cc3858;
+    --yellow: #FFE6AB;
     --black: #2b2b2b;
 }
 
@@ -20,6 +21,12 @@ body {
     max-height: auto;
     padding: 50px;
     margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .background-video {
@@ -235,6 +242,35 @@ button {
     border-style: solid;
 
     color: var(--pink);
+}
+
+.up-button {
+    height: 50px;
+    width: 50px;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 50%;
+
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-up {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    mask-image: url(images/symbol-chevron-up.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--pink);
+}
+
+.up-button:hover {
+    transform: translateY(-10px);
 }
 
 ul {
