@@ -27,6 +27,53 @@ body {
     aspect-ratio: 16 / 9;
     height: auto;
     border: none;
+    z-index: -1;
+}
+
+.video-container {
+    position: relative;
+}
+
+.video-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    pointer-events: none;
+}
+
+.video-youtube-link {
+    position: sticky;
+    top: 90%;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+
+    pointer-events: auto;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.icon-youtube {
+    width: 30px;
+    height: 30px;
+
+    background-image: url("images/icon-youtube.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.video-youtube-link:hover {
+    background: var(--pink);
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
 .search-box {
@@ -164,7 +211,7 @@ p {
 
 button {
     border-radius: 10px;
-    max-width: 20%;
+    max-width: 25%;
 
     font-family: 'Quicksand';
     font-size: medium;

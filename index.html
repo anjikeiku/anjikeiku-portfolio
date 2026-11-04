@@ -11,8 +11,23 @@
         <div id="header"></div>           
         
         <!--CHANGE SOURCE FOR NEW VIDEO-->
-        <div>
-            <video class="background-video" source src="videos/demo-reel.mp4" autoplay loop></video>
+        <div class="video-container">
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="videos/demo-reel.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-controls">
+                <a 
+                    class="video-youtube-link"
+                    href="https://youtu.be/b_jfp6dj1tg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Check out the 2025 Demo Reel on YouTube!"
+                    alt="Youtube Button"
+                >
+                    <span class="icon-youtube"></span>
+                </a>
+            </div>
         </div>
 
         <div class="wrapper">
