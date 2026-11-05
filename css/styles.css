@@ -15,6 +15,9 @@
     --pink: #cc3858;
     --yellow: #FFE6AB;
     --black: #2b2b2b;
+    --light-gray: rgba(0, 0, 0, 0.03);
+    --gray: rgba(0, 0, 0, 0.3);
+    --drop-shadow: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.1));
 }
 
 body {
@@ -76,7 +79,7 @@ body {
     justify-content: center;
 
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--gray);
 
     pointer-events: auto;
     cursor: pointer;
@@ -87,7 +90,7 @@ body {
     width: 30px;
     height: 30px;
 
-    background-image: url("images/icon-youtube.svg");
+    background-image: url("/images/icon-youtube.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -95,7 +98,7 @@ body {
 
 .video-youtube-link:hover {
     background: var(--pink);
-    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+    filter: var(--drop-shadow);
 }
 
 /*PROJECT SEARCH*/
@@ -143,7 +146,7 @@ input {
     border-radius: 15px;
 
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--light-gray);
 
     overflow: hidden;
 }
@@ -190,6 +193,8 @@ nav {
 
 /*FOOTER*/
 footer {
+    max-height: 100%;
+
     color: var(--pink);
     font-size: 8pt;
 }
@@ -270,8 +275,9 @@ p {
 
 
 button {
-    border-radius: 10px;
+    border-radius: 50px;
     max-width: 25%;
+    padding: 0 15px 0 15px;
 
     font-family: 'Quicksand';
     font-size: medium;
@@ -288,6 +294,10 @@ button {
     color: white;
 }
 
+.button-pink:hover {
+    filter: var(--drop-shadow);
+}
+
 .button-outline {
     background-color: white;
     border-width: 2px;
@@ -301,9 +311,10 @@ button {
     height: 50px;
     width: 50px;
 
-    margin: auto;
+    margin: 20px auto 20px auto;
 
     background-color: var(--yellow);
+
     border: none;
     border-radius: 50%;
 
@@ -314,20 +325,29 @@ button {
     transition: 0.3s;
 }
 
-.arrow-up {
-    display: block;
+.arrow-up-mask {
+    display: flex;
 
     width: 30px;
-    height: 30px;
+    height: 20px;
+    
+    -webkit-mask-image: url("../images/symbol-up-chevron.svg");
+    mask-image: url("../images/symbol-up-chevron.svg");
+    mask-repeat: no-repeat;
+}
 
-    background-image: url("../images/symbol-up-chevron.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.arrow-up {
+    display: flex;
+    
+    width: 30px;
+    height: 20px;
+
+    background: var(--pink);
 }
 
 .up-button:hover {
     transform: translateY(-10px);
+    filter: var(--drop-shadow);
 }
 
 .mail-to {
