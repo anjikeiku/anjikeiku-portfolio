@@ -36,34 +36,44 @@
 
         <div class="wrapper">
             <h1>Beeeee not afraid!</h1>     
-
-            <p>I'm Anji! A <span class="bold pink">Multimedia Artist</span>, brand builder, problem solver, and bonafide Angel!<br>
-            Check out my most recent projects!</p>
+            <h3 class="specialty">
+                <ul>
+                    <li>designer</li>
+                    <li>illustrator</li>
+                    <li>3D</li>
+                </ul>
+            </h3>
 
             <!--SEARCH BAR-->
             <div class="search-box">
                 <div>
-                    <p>Looking for a specific project?</p>
+                    <h3>Looking for a specific project?</h3>
                 </div>
+
                 <div class="row">
-                    <form>
-                        <input type="text"
-                        id="input-box"
-                        placeholder="Type here..." 
-                        autocomplete=off>
+                    <form onsubmit="return false;">
+                        <input
+                            type="text"
+                            id="input-box"
+                            placeholder="Type here..."
+                            autocomplete="off"
+                        >
                     </form>
                 </div>
             </div>
 
-            <!--PROJECT GRID-->
+            <!-- PROJECT GRID -->
             <div class="project-grid" id="project-grid">
-                <!--PROJECT CARDS-->
             </div>
 
-            <p id="no-results"> No projects found</p>
+            <p id="no-results" style="display: none;" class="bold italic">
+                No Projects Found
+            </p>
         
-        <button class="button-pink" title="View the Collection">
-            <p>View the Collection!</p>
+        <button class="button-pink">
+            <a href="works.html">
+                <p>Other Works!</p>
+            </a>
         </button>
 
         <!--FOOTER-->
