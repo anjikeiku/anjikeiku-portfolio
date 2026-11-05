@@ -1,4 +1,3 @@
-
 fetch('projects.html')
     .then(response => response.text())
     .then(data => {

@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Matemasie&family=Quicksand:wght@300..700&display=swap');
 
+/* PORTRAIT / MOBILE */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        aspect-ratio: 9 / 16;
+    }
+}
+
 :root {
     --pink: #cc3858;
     --yellow: #FFE6AB;
@@ -87,6 +98,7 @@ body {
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
+/*PROJECT SEARCH*/
 .search-box {
     max-width: 100%;
     background: transparent;
@@ -113,6 +125,36 @@ input {
     color: var(--pink);
 
     text-align: center;
+}
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 10px;
+}
+
+/* PROJECT CARDS */
+.project-card {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    border: none;
+    border-radius: 15px;
+
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.03);
+
+    overflow: hidden;
+}
+
+.project-card :hover {
+    cursor: pointer;
+}
+
+.project-card :hover image {
+    transform: scale(10%);
+    transition: 0.3s ease;
 }
 
 /*HEADER*/
@@ -205,6 +247,11 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    color: var(--pink);
+    font-family: Quicksand;
+}
+
 p {
     font-family: 'Quicksand';
 }
@@ -253,15 +300,18 @@ button {
 .up-button {
     height: 50px;
     width: 50px;
+
+    margin: auto;
+
     background-color: var(--yellow);
     border: none;
     border-radius: 50%;
 
-    transition: 0.3s;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: 0.3s;
 }
 
 .arrow-up {
@@ -270,13 +320,18 @@ button {
     width: 30px;
     height: 30px;
 
-    mask-image: url(images/symbol-chevron-up.svg);
-    mask-repeat: no-repeat;
-    -webkit-mask-image: var(--pink);
+    background-image: url("../images/symbol-up-chevron.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .up-button:hover {
     transform: translateY(-10px);
+}
+
+.mail-to {
+    font-family: 'Quicksand';
 }
 
 ul {
@@ -316,7 +371,7 @@ ul li a:hover:not(.active) {
     width: 10px;
     height: 10px;
 
-    background-image: url("images/bullet-heart.svg");
+    background-image: url("/images/bullet-heart.svg");
     background-size: contain;
     background-repeat: no-repeat;
 
