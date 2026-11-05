@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <!--EXTERNAL SCRIPT REFERENCE-->
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/components.js"></script>
+    <script src="js/project-search.js"></script>
+
     <head>
         <title>Home</title>
         <meta charset="utf-8">
@@ -23,9 +27,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Check out the 2025 Demo Reel on YouTube!"
-                    alt="Youtube Button"
-                    
-                >
+                    alt="Youtube Button">
                     <span class="icon-youtube"></span>
                 </a>
             </div>
@@ -43,31 +45,27 @@
                     <p>Looking for a specific project?</p>
                 </div>
                 <div class="row">
-                    <input type="text" id="input-box" placeholder="Type here..." autocomplete=off>
+                    <form>
+                        <input type="text"
+                        id="input-box"
+                        placeholder="Type here..." 
+                        autocomplete=off>
+                    </form>
                 </div>
             </div>
-            
-            <button class="button-pink">
-                <p>View the Collection!</p>
-            </button>
-        </div>
+
+            <!--PROJECT GRID-->
+            <div class="project-grid" id="project-grid">
+                <!--PROJECT CARDS-->
+            </div>
+
+            <p id="no-results"> No projects found</p>
         
+        <button class="button-pink">
+            <p>View the Collection!</p>
+        </button>
+
         <!--FOOTER-->
         <div id="footer"></div>
-
-        <!--JAVASCRIPT FETCH HEADER FOOTER-->
-        <script>
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
-                });
-
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                });
-        </script>
     </body>
 </html>

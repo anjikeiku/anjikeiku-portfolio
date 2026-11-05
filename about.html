@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <head>
-        <title>Home</title>
+        <title>About</title>
         <meta charset="utf-8">
     </head>
    
@@ -66,20 +66,5 @@
 
         <!--FOOTER-->
         <div id="footer"></div>
-
-        <!--JAVASCRIPT FETCH HEADER FOOTER-->
-        <script>
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
-                });
-
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                });
-        </script>
     </body>
 </html>
