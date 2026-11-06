@@ -375,10 +375,17 @@ header nav ul li a:hover:not(.active) {
 
 /*FOOTER*/
 footer {
+    display: flex;
+    flex-direction: column;
     max-height: 100%;
 
     color: var(--pink);
     font-size: 8pt;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
 }
 
 div-socmed_links img {
@@ -396,10 +403,18 @@ div-socmed_links img {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    transition: 0.3s ease;
 }
 
 .div-socmed_links ul li {
     float: none;
+}
+
+.div-socmed_links ul li :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: var(--drop-shadow);
 }
 
 .div-socmed_links ul li a {
