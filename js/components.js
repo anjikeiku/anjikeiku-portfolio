@@ -1,4 +1,3 @@
-
  // HEADER
 fetch(sitePath('header.html'))
     .then(response => {
