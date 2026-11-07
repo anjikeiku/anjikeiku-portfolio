@@ -27,7 +27,7 @@
     }
 
     header nav ul li a {
-        font-size: small;
+        font-size: 1rem;
     }
 
     input {
@@ -42,11 +42,15 @@
 
 :root {
     --pink: #cc3858;
+    --light-pink: rgba(255, 154, 175, 0.1);
     --yellow: #FFE6AB;
+    --dark-yellow: #efb358;
+    --light-yellow: rgba(255, 238, 130, 0.281);
     --black: #2b2b2b;
-    --light-gray: rgba(0, 0, 0, 0.03);
     --gray: rgba(0, 0, 0, 0.3);
-    --drop-shadow: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.1));
+    --light-gray: rgba(0, 0, 0, 0.03);
+    --lightest-gray: rgba(0, 0, 0, 0.05);
+    --drop-shadow: drop-shadow(0px 5px 3px rgba(255, 0, 38, 0.1));
 }
 
 body {
@@ -278,12 +282,15 @@ input {
     border: none;
     border-radius: 15px;
 
-    text-decoration: none;
     background-color: var(--light-gray);
 
     overflow: hidden;
 
     cursor: pointer;
+}
+
+.project-card a{
+    text-decoration: none;
 }
 
 .project-card img {
@@ -298,9 +305,62 @@ input {
     cursor: pointer;
 }
 
+.project-card ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-card ul li{
+    list-style: none;
+}
+
 .project-description {
     padding: 10px;
     text-align: left;
+}
+
+.project-description h3{
+    margin: 10px 0px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Quicksand';
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--black);
+
+    text-transform: capitalize;
+}
+
+.project-tags li{
+    padding: 8px;
+    margin: 0;
+
+    border: none;
+    border-radius: 25px;
+
+    background-color: var(--lightest-gray);
+
+    transition: 0.3s ease;
+}
+
+.project-tags li:hover {
+    cursor: default;
+    transform: translateY(-5px);
+    
+    color: var(--pink);
+    background-color: var(--light-pink);
+    filter: var(--drop-shadow);
 }
 
 /*ABOUT PAGE*/
@@ -333,6 +393,17 @@ input {
     height: auto;
 
     border-radius: 50px;
+
+    transition: 0.3s ease;
+}
+
+.about-profile img:hover {
+    cursor: pointer;
+    transform: rotate(-3deg);
+}
+
+.about-profile img:active {
+    transform: rotate(3deg);
 }
 
 /*HEADER*/
@@ -346,18 +417,9 @@ header {
     background: transparent;
 
     font-family: 'Quicksand';
-    font-size: larger;
+    font-size: 1.5rem;
     font-weight: bolder;
     color: var(--pink);
-}
-
-/* HEADER */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
 }
 
 .div-header {
@@ -376,11 +438,11 @@ header {
 }
 
 /* HEADER WHEN SCROLLED */
-header.scrolled .div-header {
+header.scrolled .div-header{
+    transition: 0.3s ease;
     background: linear-gradient(
         to bottom,
-        white,
-        rgba(255, 255, 255, 0)
+        white, transparent
     );
 }
 
@@ -403,7 +465,7 @@ header nav {
 header nav ul {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
 
     list-style: none;
     margin: 0;
@@ -417,17 +479,42 @@ header nav ul li {
     padding: 0;
 }
 
-/*NAVIGATION LINKS*/
+/* NAVIGATION LINKS */
 header nav ul li a {
-    display: block;
-    padding: 0;
+    display: inline-block;
+    position: relative;
 
-    text-decoration: none;
+    padding: 5px 0;
+
     color: var(--pink);
     text-align: center;
+    text-decoration: none;
 }
 
-/*HOVER*/
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: var(--pink);
+
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+
+    border-radius: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
 header nav ul li a:hover:not(.active) {
     color: var(--pink);
 }
@@ -442,7 +529,7 @@ footer {
     align-items: center;
 
     color: var(--pink);
-    font-size: 8pt;
+    font-size: 1rem;
 }
 
 .footer-logo {
@@ -524,9 +611,10 @@ h2 {
 }
 
 h3 {
+
     color: var(--pink);
     font-family: 'Quicksand';
-    font-size: x-large;
+    font-size: 1.5rem;
 }
 
 p {
@@ -552,7 +640,7 @@ button {
     padding: 0 15px 0 15px;
 
     font-family: 'Quicksand';
-    font-size: medium;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     
