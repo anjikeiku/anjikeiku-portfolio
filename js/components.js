@@ -1,10 +1,12 @@
+// DETECT WEBSITE ROOT
 const SITE_BASE = location.hostname === '127.0.0.1' ||
                   location.hostname === 'localhost'
     ? ''
     : '/anjikeiku-portfolio';
 
+
 // HEADER
-fetch('../header.html')
+fetch(`${SITE_BASE}/header.html`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load header.html');
@@ -16,14 +18,14 @@ fetch('../header.html')
 
         // Load header scroll functionality AFTER header is inserted
         const script = document.createElement("script");
-        script.src = "/js/header-scroll.js";
+        script.src = `${SITE_BASE}/js/header-scroll.js`;
         document.body.appendChild(script);
     })
     .catch(error => console.error('Header error:', error));
 
 
 // FOOTER
-fetch('../footer.html')
+fetch(`${SITE_BASE}/footer.html`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load footer.html');
