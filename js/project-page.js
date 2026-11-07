@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const image = document.getElementById('project-image');
 
-    image.src = project.image;
+    image.src = sitePath(project.image);
     image.alt = project.name;
 
     const tagContainer = document.getElementById('project-tags');

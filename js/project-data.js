@@ -4,7 +4,7 @@ async function getProjectData(projectId) {
     try {
 
         // Fetch the central project data
-        const response = await fetch('/projects.html');
+        const response = await fetch(sitePath('projects.html'));
 
         if (!response.ok) {
             throw new Error('Could not load projects.html');
