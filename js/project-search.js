@@ -16,7 +16,8 @@ const keywordAliases = {
     '3d': [
         'blender',
         'autodesk',
-        '3dsmax'
+        '3dsmax',
+        'maya'
     ]
 };
 
