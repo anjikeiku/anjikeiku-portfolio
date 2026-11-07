@@ -7,10 +7,16 @@ const keywordAliases = {
         'premiere pro',
     ],
 
+    blender: [
+        'blender',
+        '3d',
+        '3d modeling',
+        '3d rendering'
+    ]
+
     3d: [
         'blender',
-        'autodesk',
-        '3ds max',
+        '3dsmax',
         '3d modeling',
         '3d rendering'
     ]
