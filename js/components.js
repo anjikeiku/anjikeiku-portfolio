@@ -1,3 +1,8 @@
+const SITE_BASE = location.hostname === '127.0.0.1' ||
+                  location.hostname === 'localhost'
+    ? ''
+    : '/anjikeiku-portfolio';
+
 // HEADER
 fetch('../header.html')
     .then(response => {
