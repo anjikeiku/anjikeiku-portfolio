@@ -13,7 +13,7 @@ const keywordAliases = {
         '3d rendering'
     ]
 
-    '3d': [
+    '3d': [ 
         'blender',
         'autodesk',
         '3dsmax',
