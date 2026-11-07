@@ -1,5 +1,5 @@
 // HEADER
-fetch('/header.html')
+fetch('../js/header.html')
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load header.html');
@@ -11,14 +11,14 @@ fetch('/header.html')
 
         // Load header scroll functionality AFTER header is inserted
         const script = document.createElement("script");
-        script.src = "/js/header-scroll.js";
+        script.src = "../js/header-scroll.js";
         document.body.appendChild(script);
     })
     .catch(error => console.error('Header error:', error));
 
 
 // FOOTER
-fetch('/footer.html')
+fetch('../js/footer.html')
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load footer.html');
