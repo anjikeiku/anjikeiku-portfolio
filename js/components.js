@@ -1,5 +1,7 @@
+const SITE_BASE = '/anjikeiku-portfolio';
+
 // HEADER
-fetch('../root/header.html')
+fetch(`${SITE_BASE}/header.html`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load header.html');
@@ -9,16 +11,16 @@ fetch('../root/header.html')
     .then(data => {
         document.getElementById('header').innerHTML = data;
 
-        // Load header scroll functionality AFTER header is inserted
+        // Load header scroll functionality
         const script = document.createElement("script");
-        script.src = "../js/header-scroll.js";
+        script.src = `${SITE_BASE}/js/header-scroll.js`;
         document.body.appendChild(script);
     })
     .catch(error => console.error('Header error:', error));
 
 
 // FOOTER
-fetch('../root/footer.html')
+fetch(`${SITE_BASE}/footer.html`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load footer.html');
@@ -28,7 +30,6 @@ fetch('../root/footer.html')
     .then(data => {
         document.getElementById('footer').innerHTML = data;
 
-        // Initialize back to top
         if (typeof initBackToTop === 'function') {
             initBackToTop();
         }
