@@ -1,5 +1,5 @@
 // HEADER
-fetch('../js/header.html')
+fetch('../header.html')
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load header.html');
@@ -18,7 +18,7 @@ fetch('../js/header.html')
 
 
 // FOOTER
-fetch('../js/footer.html')
+fetch('../footer.html')
     .then(response => {
         if (!response.ok) {
             throw new Error('Could not load footer.html');
