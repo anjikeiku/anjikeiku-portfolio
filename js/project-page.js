@@ -14,15 +14,36 @@ document.addEventListener('DOMContentLoaded', async function () {
     image.src = sitePath(project.image);
     image.alt = project.name;
 
+
+    //DISPLAY CATEGORIZED TAGS
     const tagContainer = document.getElementById('project-tags');
 
-    project.tags.forEach(function (tag) {
+    tagContainer.innerHTML = '';
 
-        const li = document.createElement('li');
+    Object.entries(project.groupedTags).forEach(function ([category, tags]) {
 
-        li.innerText = tag;
+        const group = document.createElement('div');
+        group.classList.add('tag-group');
 
-        tagContainer.appendChild(li);
+        const heading = document.createElement('h4');
+        heading.innerText = category;
+
+        const list = document.createElement('ul');
+
+        tags.forEach(function (tag) {
+
+            const li = document.createElement('li');
+
+            li.innerText = tag;
+
+            list.appendChild(li);
+
+        });
+
+        group.appendChild(heading);
+        group.appendChild(list);
+
+        tagContainer.appendChild(group);
 
     });
 

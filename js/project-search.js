@@ -21,7 +21,6 @@ const keywordAliases = {
     ]
 };
 
-
 // LOAD PROJECTS
 fetch('projects.html')
     .then(response => {

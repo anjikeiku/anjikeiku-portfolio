@@ -1,4 +1,49 @@
+// PROJECT TAGS
+const tagCategories = {
+    creative: [
+        'creative direction',
+        'brand identity',
+        'illustration'
+    ],
 
+    production: [
+        'print',
+        'event coordination',
+        'social media',
+        'packaging'
+    ],
+
+    software: [
+        'illustrator',
+        'photoshop',
+        'blender',
+        'autodesk',
+        '3dsmax',
+        'maya'
+    ]
+};
+
+//GROUP PROJECT TAGS
+function groupProjectTags(tags) {
+
+    const grouped = {};
+
+    Object.entries(tagCategories).forEach(([category, categoryTags]) => {
+
+        const matchingTags = tags.filter(tag =>
+            categoryTags.includes(tag.toLowerCase())
+        );
+
+        if (matchingTags.length > 0) {
+            grouped[category] = matchingTags;
+        }
+
+    });
+
+    return grouped;
+}
+
+//GET PROJECT DATA
 async function getProjectData(projectId) {
 
     try {
@@ -14,6 +59,7 @@ async function getProjectData(projectId) {
 
         // Convert fetched HTML into a document
         const parser = new DOMParser();
+
         const documentData = parser.parseFromString(
             html,
             'text/html'
@@ -29,14 +75,18 @@ async function getProjectData(projectId) {
         }
 
         // Extract project information
+        const tags = Array.from(
+            project.querySelectorAll('.project-tags li')
+        ).map(tag => tag.innerText.trim());
+
         return {
             name: project.querySelector('h3')?.innerText || '',
 
             image: project.querySelector('img')?.getAttribute('src') || '',
 
-            tags: Array.from(
-                project.querySelectorAll('.project-tags li')
-            ).map(tag => tag.innerText.trim())
+            tags: tags,
+
+            groupedTags: groupProjectTags(tags)
         };
 
     } catch (error) {
