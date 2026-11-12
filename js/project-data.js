@@ -65,7 +65,7 @@ async function getProjectData(projectId) {
             'text/html'
         );
 
-        // Find the requested project
+        //Find requested project
         const project = documentData.querySelector(
             `[data-project="${projectId}"]`
         );
@@ -74,17 +74,25 @@ async function getProjectData(projectId) {
             throw new Error(`Project "${projectId}" not found`);
         }
 
-        // Extract project information
+        //Extract project information
         const tags = Array.from(
             project.querySelectorAll('.project-tags li')
         ).map(tag => tag.innerText.trim());
+
+        //Display first 3 tags
+        const displayedTags = tags.slice(0, 3);
+
+        //Check if more than 3 tags
+        const hasMoreTags = tags.length > 3;
 
         return {
             name: project.querySelector('h3')?.innerText || '',
 
             image: project.querySelector('img')?.getAttribute('src') || '',
 
-            tags: tags,
+            tags: displayedTags,
+
+            hasMoreTags: hasMoreTags,
 
             groupedTags: groupProjectTags(tags)
         };

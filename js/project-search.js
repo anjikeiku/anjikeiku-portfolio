@@ -36,10 +36,38 @@ fetch('projects.html')
         const noResults = document.getElementById('no-results');
 
         // Load all project cards
-        projectGrid.innerHTML = data;
+projectGrid.innerHTML = data;
 
         // Get all project cards
         const projects = projectGrid.querySelectorAll('.project-card');
+
+        // Limit displayed tags
+        projects.forEach(project => {
+
+            const tagList = project.querySelector('.project-tags');
+            const tags = Array.from(tagList.querySelectorAll('li'));
+
+            // Hide tags after third
+            tags.slice(3).forEach(tag => {
+                tag.style.display = 'none';
+            });
+
+            // Add indicator if more than 3 tags
+            if (tags.length > 3) {
+
+                const moreTags = document.createElement('li');
+
+                const hiddenCount = tags.length - 3;
+
+                moreTags.textContent = `+${hiddenCount} more`;
+
+                moreTags.classList.add('more-tags');
+
+                tagList.appendChild(moreTags);
+
+            }
+
+        });
 
         // Search automatically as user types
         searchInput.addEventListener('input', function () {

@@ -471,16 +471,38 @@ input {
     margin: 0 auto;
     border-radius: 50px;
 
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.about-profile img:hover {
-    cursor: pointer;
-    transform: rotate(-3deg);
+/* DESKTOP HOVER */
+@media (hover: hover) and (pointer: fine) {
+    .about-profile img:hover {
+        cursor: pointer;
+        transform: rotate(-3deg);
+    }
+
+    .about-profile img:active {
+        transform: rotate(3deg);
+    }
 }
 
-.about-profile img:active {
-    transform: rotate(3deg);
+/* MOBILE PROFILE WIGGLE */
+@media (hover: none) and (pointer: coarse) {
+    .about-profile img {
+        cursor: pointer;
+    }
+
+    .about-profile img.wiggle {
+        animation: profile-wiggle .7s ease;
+    }
+}
+
+@keyframes profile-wiggle {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-3deg); }
+    50%  { transform: rotate(3deg); }
+    75%  { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
 }
 
 /*HEADER*/
@@ -889,10 +911,10 @@ button a{
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (hover: none) and (pointer: coarse) {
     /*TYPOGRAPHY*/
     h1 {
-        font-size: 2rem;
+        font-size: 2rem; 
     }
 
     /* HEADER LAYOUT */
@@ -1054,5 +1076,15 @@ button a{
         align-items: center;
         justify-content: center;
         gap: 10px;
+    }
+
+    .skill-list {
+        gap: 8px;
+    }
+
+    .skill-list li {
+        padding: 10px;
+
+        font-size: 0.9em;
     }
 }
