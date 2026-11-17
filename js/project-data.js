@@ -3,7 +3,8 @@ const tagCategories = {
     creative: [
         'creative direction',
         'brand identity',
-        'illustration'
+        'illustration',
+        'character design'
     ],
 
     production: [
