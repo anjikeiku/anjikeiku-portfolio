@@ -49,6 +49,11 @@ body {
     flex:1
 }
 
+.container img{
+    height: auto;
+    width: 100%;
+}
+
 /* BACKGROUND VIDEO */
 .home-video-container {
     display: flex;
