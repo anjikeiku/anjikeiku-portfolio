@@ -1,4 +1,4 @@
-// KEYWORD ALIASES
+//KEYWORD ALIASES
 const keywordAliases = {
     adobe: [
         'photoshop',
@@ -21,7 +21,7 @@ const keywordAliases = {
     ]
 };
 
-// LOAD PROJECTS
+//LOAD PROJECTS
 fetch('projects.html')
     .then(response => {
         if (!response.ok) {
@@ -35,24 +35,37 @@ fetch('projects.html')
         const searchInput = document.getElementById('input-box');
         const noResults = document.getElementById('no-results');
 
-        // Load all project cards
-projectGrid.innerHTML = data;
+        //Load all project cards
+        projectGrid.innerHTML = data;
 
-        // Get all project cards
-        const projects = projectGrid.querySelectorAll('.project-card');
+        //Get all project cards, convert to array
+        const projects = Array.from(projectGrid.querySelectorAll('.project-card'));
 
-        // Limit displayed tags
+        //Sort project cards alphabetically
+        projects.sort((a,b) => {
+            const nameA = a.querySelector('h3').innerText.trim();
+            const nameB = b.querySelector('h3').innerText.trim();
+
+            return nameA.localeCompare(nameB);
+        })
+
+        //rearrange cards based on sorted
+        projects.forEach(project => {
+            projectGrid.appendChild(project);
+        })
+        
+        //Limit displayed tags
         projects.forEach(project => {
 
             const tagList = project.querySelector('.project-tags');
             const tags = Array.from(tagList.querySelectorAll('li'));
 
-            // Hide tags after third
+            //Hide tags after third
             tags.slice(3).forEach(tag => {
                 tag.style.display = 'none';
             });
 
-            // Add indicator if more than 3 tags
+            //Add indicator if more than 3 tags
             if (tags.length > 3) {
 
                 const moreTags = document.createElement('li');
@@ -69,7 +82,7 @@ projectGrid.innerHTML = data;
 
         });
 
-        // Search automatically as user types
+        //Search automatically as user types
         searchInput.addEventListener('input', function () {
 
             const searchValue = searchInput.value
@@ -80,16 +93,16 @@ projectGrid.innerHTML = data;
 
             projects.forEach(function (project) {
 
-                // Get project name
+                //Get project name
                 const projectName = project.querySelector('h3')
                     .innerText.toLowerCase();
 
-                // Get all project tags
+                //Get all project tags
                 const projectTags = Array.from(
                     project.querySelectorAll('.project-tags li')
                 ).map(tag => tag.innerText.toLowerCase());
 
-                // Get matching keyword aliases
+                //Get matching keyword aliases
                 const aliases = Object.entries(keywordAliases)
                 .filter(([category, keywords]) =>
                     projectTags.some(tag => keywords.includes(tag))
@@ -107,14 +120,14 @@ projectGrid.innerHTML = data;
 
                 });
 
-                // Combine searchable information
+                //Combine searchable information
                 const searchableText = [
                     projectName,
                     ...projectTags,
                     ...aliases
                 ].join(' ');
 
-                // Check if search matches
+                //Check if search matches
                 if (searchableText.includes(searchValue)) {
 
                     project.classList.remove('hidden');
