@@ -13,6 +13,12 @@ const keywordAliases = {
         '3d rendering'
     ],
 
+    character: [
+        'mascot',
+        'mascot design',
+        'character design'
+    ]
+
     '3d': [ 
         'blender',
         'autodesk',

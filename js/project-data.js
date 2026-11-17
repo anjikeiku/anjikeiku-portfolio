@@ -4,7 +4,10 @@ const tagCategories = {
         'creative direction',
         'brand identity',
         'illustration',
-        'character design'
+        'character design',
+        'mascot design',
+        'logo design',
+        'game design'
     ],
 
     production: [
