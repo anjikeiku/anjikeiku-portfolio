@@ -453,6 +453,12 @@ input {
     justify-content: center;
 }
 
+.video-container img{
+    display: inline;
+    align-self: center;
+    justify-self: center;
+}
+
 .heading-video {
     height: auto;
     width: 100%;
