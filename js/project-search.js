@@ -17,7 +17,7 @@ const keywordAliases = {
         'mascot',
         'mascot design',
         'character design'
-    ]
+    ],
 
     '3d': [ 
         'blender',
