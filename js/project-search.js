@@ -19,6 +19,13 @@ const keywordAliases = {
         'character design'
     ],
 
+    print: [
+        'book',
+        'magazine',
+        'print layout',
+        'layout'
+    ],
+
     '3d': [ 
         'blender',
         'autodesk',

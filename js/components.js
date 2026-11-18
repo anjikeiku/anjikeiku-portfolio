@@ -1,4 +1,4 @@
- // HEADER
+//HEADER
 fetch(sitePath('header.html'))
     .then(response => {
         if (!response.ok) {
@@ -33,7 +33,7 @@ fetch(sitePath('header.html'))
     .catch(error => console.error('Header error:', error));
 
 
-// FOOTER
+//FOOTER
 fetch(sitePath('footer.html'))
     .then(response => {
         if (!response.ok) {

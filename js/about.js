@@ -4,7 +4,7 @@ if (profileImage) {
 
     profileImage.addEventListener('click', function() {
 
-        // Restart animation
+        //Restart animation
         profileImage.classList.remove('wiggle');
 
         //in case none image

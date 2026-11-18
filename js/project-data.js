@@ -1,4 +1,4 @@
-// PROJECT TAGS
+//PROJECT TAGS
 const tagCategories = {
     creative: [
         'creative direction',
@@ -7,14 +7,19 @@ const tagCategories = {
         'character design',
         'mascot design',
         'logo design',
-        'game design'
+        'game design',
+        'print layout',
+        'copywriting',
+        'video editing'
     ],
 
     production: [
         'print',
         'event coordination',
         'social media',
-        'packaging'
+        'packaging',
+        'digital mockup',
+        'game'
     ],
 
     software: [

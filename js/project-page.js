@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const image = document.getElementById('project-image');
 
-    image.src = sitePath(project.image);
-    image.alt = project.name;
-
+    if (image){
+        image.src = sitePath(project.image);
+        image.alt = project.name;
+    }
 
     //DISPLAY CATEGORIZED TAGS
     const tagContainer = document.getElementById('project-tags');

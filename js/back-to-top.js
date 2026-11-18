@@ -1,5 +1,3 @@
-
-// Initialize back-to-top button
 function initBackToTop() {
 
     const mybutton = document.getElementById("myBtn");
